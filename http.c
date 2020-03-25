@@ -91,11 +91,11 @@ int main(int argc,char *argv[])
 
     /* create the socket */
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    if (sockfd < 0) error("ERROR opening socket");
+    if (sockfd < 0) error("!!!!!!!!!!!!!!!!!! ERROR");
 
     /* lookup the ip address */
     server = gethostbyname(host);
-    if (server == NULL) error("ERROR, no such host");
+    if (server == NULL) error("!!!!!!!!!!!!!!!! ERROR");
 
     /* fill in the structure */
     memset(&serv_addr,0,sizeof(serv_addr));
