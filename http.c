@@ -16,7 +16,8 @@ int main(int argc,char *argv[])
 
     /* first where are we going to send it? */
     int portno = atoi(argv[2])>0?atoi(argv[2]):80;
-    char *host = strlen(argv[1])>0?argv[1]:"localhost";
+    //char *host = strlen(argv[1])>0?argv[1]:"localhost";
+    char *host = strlen(argv[1]) > 0 ? argv[1] : "localhost";
 
     struct hostent *server;
     struct sockaddr_in serv_addr;
@@ -91,11 +92,19 @@ int main(int argc,char *argv[])
 
     /* create the socket */
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
+//<<<<<<< HEAD
     if (sockfd < 0) error("!!!!!!!!!!!!!!!!!! ERROR");
 
     /* lookup the ip address */
     server = gethostbyname(host);
     if (server == NULL) error("!!!!!!!!!!!!!!!! ERROR");
+//=======
+//    if (sockfd < 0) error("ERROR opening socket, check again!");
+
+//    /* lookup the ip address */
+//    server = gethostbyname(host);
+//    if (server == NULL) error("ERROR, no such host, check again");
+//>>>>>>> 1d73bd28a6fb92cbc29737a78ccd7a1e25f1418e
 
     /* fill in the structure */
     memset(&serv_addr,0,sizeof(serv_addr));
