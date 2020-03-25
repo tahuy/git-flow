@@ -6,11 +6,13 @@
 #include <netinet/in.h> /* struct sockaddr_in, struct sockaddr */
 #include <netdb.h> /* struct hostent, gethostbyname */
 
+
 void error(const char *msg) { perror(msg); exit(0); }
 
 int main(int argc,char *argv[])
 {
     int i;
+    int x = 0;
 
     /* first where are we going to send it? */
     int portno = atoi(argv[2])>0?atoi(argv[2]):80;
